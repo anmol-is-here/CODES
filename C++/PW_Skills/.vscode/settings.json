@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "iostream": "cpp"
+    },
+    "editor.renderWhitespace": "selection",
+    "editor.wordWrap": "on"
+}
