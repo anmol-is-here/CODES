@@ -3,6 +3,8 @@
 // #include <string>
 using namespace std;
 
+
+// Input array must contain at least 3 elements.
 int mountain_index(vector <int> &v) {
     int lo {0};
     int hi = v.size()-1;
@@ -21,7 +23,7 @@ int mountain_index(vector <int> &v) {
 }
 
 int main() {
-    vector <int> v {0,4,2,0};
+    vector <int> v {2,1,0};
     cout<<mountain_index(v);
     return 0;
 }
