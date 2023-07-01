@@ -21,6 +21,11 @@ int main() {
         cout<<"Name - "<<ele.first<<endl;
         cout<<"Phone no. - "<<ele.second<<endl;
     }cout<<endl;  
+
+    map<string, int>::reverse_iterator itr;
+    for(itr = directory.rbegin(); itr!=directory.rend(); itr++){
+        cout<<itr->first<<" - "<<itr->second<<endl;
+    } 
     
     return 0;
 }
