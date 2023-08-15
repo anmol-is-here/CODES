@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-// #include <string>
+#include <stack>
 using namespace std;
 
 class Node{
@@ -13,6 +13,29 @@ public:
         next = NULL;
     }
 };
+
+Node* removeNodes(Node* head) {
+        stack<Node*> st;
+        st.push(head);
+        Node* ptr = head->next;
+        
+        Node* temp = st.top();
+        while(ptr){
+            if(st.top()->val >= ptr->val){
+                st.push(ptr);
+                ptr = ptr->next;
+            }
+            else{
+                st.pop();
+            }
+            if(st.empty()){
+                st.push(ptr);
+                temp = st.top();
+                ptr = ptr->next;
+            }
+        }
+        return temp;
+    }
 
 void insertAtHead(Node* &head, int val) {
     Node* new_node = new Node(val);
@@ -112,26 +135,34 @@ void display(Node* head) {
 
 int main() {
     Node* head = NULL;
+    // insertAtHead(head, 2);
+    // display(head);
+    // insertAtHead(head, 5);
+    // display(head);
+    // insertAtHead(head, 7);
+    // display(head);
+    // insertAtHead(head, 6);
+    // display(head);
+    // insertAtTail(head, 30);
+    // display(head);
+    // insertAtPosition(head, 20, 3);
+    // display(head);
+    // updationAtPos(head, 8, 0);
+    // display(head);
+    // deletionAtHead(head);
+    // display(head);
+    // deletionAtTail(head);
+    // display(head);
+    // deletionAtPoa(head, 2);
+    // display(head);
+    insertAtHead(head, 8);
+    insertAtHead(head, 3);
+    insertAtHead(head, 13);
     insertAtHead(head, 2);
-    display(head);
     insertAtHead(head, 5);
     display(head);
-    insertAtHead(head, 7);
-    display(head);
-    insertAtHead(head, 6);
-    display(head);
-    insertAtTail(head, 30);
-    display(head);
-    insertAtPosition(head, 20, 3);
-    display(head);
-    updationAtPos(head, 8, 0);
-    display(head);
-    deletionAtHead(head);
-    display(head);
-    deletionAtTail(head);
-    display(head);
-    deletionAtPoa(head, 2);
-    display(head);
+    Node*head2 = removeNodes(head);
+    display(head2);
 
     
     return 0;
