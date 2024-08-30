@@ -22,7 +22,7 @@ vector <int> nge(vector<int> &arr){ // functioin to calculate next gratest eleme
     return output;
 }
 
-vector <int> pge(vector<int> &arr){ // functioin to calculate next gratest element.
+vector <int> pge(vector<int> &arr){ // functioin to calculate previous gratest element.
     int n = arr.size();
     vector<int> output(n, -1);
     stack<int> st;
